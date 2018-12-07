@@ -7,9 +7,9 @@
 		"start": "node index.js"
 	},
 	"dependencies": {
-	  "coffee-script": "*",
-    "express": "^4.12.4",
-    "socket.io": "*"
+		"coffee-script": "*",
+		"express": "^4.12.4",
+		"socket.io": "*"
 	},
 	"engines": {
 		"node": "4.4.5"
