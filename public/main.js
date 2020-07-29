@@ -41,6 +41,9 @@ $(function() {
   function setUsername () {
     username = cleanInput($usernameInput.val().trim()+id);
 
+    if(username === id){
+      username = "Guest"+id
+    }
     // If the username is valid
     if (username) {
       $loginPage.fadeOut();
@@ -245,13 +248,17 @@ $(function() {
 
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user entrou', function (data) {
-    log(data.username+id + ' entrou');
+    log(data.username + ' entrou');
     addParticipantsMessage(data);
   });
 
   // Whenever the server emits 'user left', log it in the chat body
   socket.on('user saiu', function (data) {
-    log(data.username+id + ' saiu');
+    if(data.isername === "Guest"){
+      log("Guest"+id + ' saiu');
+    }else{
+      log(data.username + ' saiu');
+    }
     addParticipantsMessage(data);
     removeChatTyping(data);
   });
