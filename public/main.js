@@ -79,10 +79,10 @@ $(function() {
           message: "Agora tem " + countUser + " participantes"
         });
       }
-      if(message === "!"){
+      if(message === "!pt"){
         addChatMessage({
           username: "Robô[✔️]",
-          message: "Agora tem " + countUser + " participantes"
+          message: "São " + countUser + " participantes"
         });
       }
       // tell server to execute 'new message' and send along one parameter
@@ -274,7 +274,7 @@ $(function() {
 
   // Whenever the server emits 'user left', log it in the chat body
   socket.on('user saiu', function (data) {
-    if(data.isername === "Guest"){
+    if(data.username === "Guest"){
       log("Guest"+id + ' saiu');
     }else{
       log(data.username + ' saiu');
