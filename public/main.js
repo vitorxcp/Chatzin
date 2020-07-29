@@ -107,7 +107,7 @@ $(function() {
   // Adds the visual chat typing message
   function addChatTyping (data) {
     data.typing = true;
-    data.message = 'is typing';
+    data.message = 'Está digitando...';
     addChatMessage(data);
   }
 
