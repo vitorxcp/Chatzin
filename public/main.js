@@ -272,7 +272,6 @@ $(function() {
     log(data.username + ' entrou');
     membros.push(data.username)
     addParticipantsMessage(data);
-    console.log(data.username+" entrou")
   });
 
   // Whenever the server emits 'user left', log it in the chat body
