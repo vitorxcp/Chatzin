@@ -40,7 +40,7 @@ io.on('connection', function (socket) {
       numUsers: numUsers
     });
     // echo globally (all clients) that a person has connected
-    socket.broadcast.emit('user joined', {
+    socket.broadcast.emit('user entrou', {
       username: socket.username,
       numUsers: numUsers
     });
@@ -66,7 +66,7 @@ io.on('connection', function (socket) {
       --numUsers;
 
       // echo globally that this client has left
-      socket.broadcast.emit('user left', {
+      socket.broadcast.emit('user saiu', {
         username: socket.username,
         numUsers: numUsers
       });

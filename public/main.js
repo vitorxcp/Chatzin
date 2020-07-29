@@ -1,10 +1,4 @@
-if(localStorage.pt === 'a'){}else{
-  let rd = Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)
-  alert(rd)
-  localStorage.setItem('as',rd)
-  localStorage.setItem('pt','a')
-}
-var id = localStorage.as
+const id = Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)
 $(function() {
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
