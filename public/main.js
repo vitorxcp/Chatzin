@@ -8,7 +8,7 @@ $(function() {
     '#3b88eb', '#3824aa', '#a700ff', '#d300e7'
   ];
   
-
+  var countUser
   // Initialize variables
   var $window = $(window);
   var $usernameInput = $('.usernameInput'); // Input for username
@@ -34,6 +34,7 @@ $(function() {
     } else {
       message += "Agora tem " + data.numUsers + " participante";
     }
+    countUser = data.numUsers
     log(message);
   }
 
@@ -68,6 +69,18 @@ $(function() {
         username: username,
         message: message
       });
+      if(message === "!pl"){
+        addChatMessage({
+          username: "Robô[✔️]",
+          message: "Agora tem " + countUser + " participantes"
+        });
+      }
+      if(message === "!"){
+        addChatMessage({
+          username: "Robô[✔️]",
+          message: "Agora tem " + countUser + " participantes"
+        });
+      }
       // tell server to execute 'new message' and send along one parameter
       socket.emit('new message', message);
     }
