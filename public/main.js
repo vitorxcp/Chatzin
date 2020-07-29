@@ -1,4 +1,4 @@
-const id = "#"+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)
+const id = " #"+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)
 $(function() {
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
@@ -38,7 +38,7 @@ $(function() {
 
   // Sets the client's username
   function setUsername () {
-    username = cleanInput($usernameInput.val().trim());
+    username = cleanInput($usernameInput.val().trim()+id);
 
     // If the username is valid
     if (username) {
