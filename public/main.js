@@ -281,7 +281,8 @@ $(function() {
     }else{
       log(data.username + ' saiu');
     }
-    membros.push(data.username)
+    let as = membros.indexOf(data.username)
+    membros.splice(as, 1)
     addParticipantsMessage(data);
     removeChatTyping(data);
   });
