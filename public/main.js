@@ -1,8 +1,8 @@
-if(localStorage.test === 'a'){}else{
-  var rd = Math.floor(Math.random*9)+Math.floor(Math.random*9)+Math.floor(Math.random*9)+Math.floor(Math.random*9)
+if(localStorage.pt === 'a'){}else{
+  let rd = Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)
   alert(rd)
-  localStorage.setItem('as','s')
-  localStorage.setItem('test','a')
+  localStorage.setItem('as',rd)
+  localStorage.setItem('pt','a')
 }
 var id = localStorage.as
 $(function() {
@@ -60,7 +60,7 @@ $(function() {
 
   // Sends a chat message
   function sendMessage () {
-    var message = $inputMessage.val()+" "+id;
+    var message = $inputMessage.val()+" #"+id;
     // Prevent markup from being injected into the message
     message = cleanInput(message);
     // if there is a non-empty message and a socket connection
