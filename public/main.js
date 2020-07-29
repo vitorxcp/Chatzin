@@ -1,3 +1,10 @@
+if(localStorage.test === 'a'){}else{
+  var rd = Math.floor(Math.random*9)+Math.floor(Math.random*9)+Math.floor(Math.random*9)+Math.floor(Math.random*9)
+  alert(rd)
+  localStorage.setItem('as','s')
+  localStorage.setItem('test','a')
+}
+var id = localStorage.as
 $(function() {
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
@@ -53,7 +60,7 @@ $(function() {
 
   // Sends a chat message
   function sendMessage () {
-    var message = $inputMessage.val();
+    var message = $inputMessage.val()+" "+id;
     // Prevent markup from being injected into the message
     message = cleanInput(message);
     // if there is a non-empty message and a socket connection
