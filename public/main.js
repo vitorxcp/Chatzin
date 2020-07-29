@@ -1,5 +1,9 @@
 $(function() {
-  const id = "[#"+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+"]"
+  if(localStorage.tt === 'a'){}else{
+    localStorage.setItem('tt','a')
+    localStorage.setItem('i',"[#"+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+"]")
+  }
+  const id = localStorage.i
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
   var COLORS = [
@@ -103,6 +107,8 @@ $(function() {
       $typingMessages.remove();
     }
 
+    var $Div = $('<hr/>')
+    
     var $usernameDiv = $('<span class="username"/>')
       .text(data.username)
       .css('color', getUsernameColor(data.username));
@@ -113,7 +119,7 @@ $(function() {
     var $messageDiv = $('<li class="message"/>')
       .data('username', data.username)
       .addClass(typingClass)
-      .append($usernameDiv, $messageBodyDiv);
+      .append($Div, $usernameDiv, $messageBodyDiv);
 
     addMessageElement($messageDiv, options);
   }
