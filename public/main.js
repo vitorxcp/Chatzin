@@ -1,4 +1,4 @@
-const id = Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)
+const id = "#"+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)
 $(function() {
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
@@ -244,13 +244,13 @@ $(function() {
 
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user entrou', function (data) {
-    log(data.username + ' entrou');
+    log(data.username+id + ' entrou');
     addParticipantsMessage(data);
   });
 
   // Whenever the server emits 'user left', log it in the chat body
   socket.on('user saiu', function (data) {
-    log(data.username + ' saiu');
+    log(data.username+id + ' saiu');
     addParticipantsMessage(data);
     removeChatTyping(data);
   });

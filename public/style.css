@@ -124,7 +124,7 @@ ul {
 }
 
 .message.typing .messageBody {
-  color: gray;
+  color: black;
 }
 
 .username {
