@@ -1,5 +1,5 @@
 $(function() {
-  const id = " #"+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)
+  const id = "[#"+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+"]"
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
   var COLORS = [
@@ -8,11 +8,6 @@ $(function() {
     '#3b88eb', '#3824aa', '#a700ff', '#d300e7'
   ];
   
-  document.addEventListener('keydown',function(e){
-    if(e.keyCode === 167){
-      COLORS = prompt('Cor')
-    }
-  })
 
   // Initialize variables
   var $window = $(window);
@@ -60,7 +55,7 @@ $(function() {
 
   // Sends a chat message
   function sendMessage () {
-    var message = ": " + $inputMessage.val();
+    var message = $inputMessage.val();
     // Prevent markup from being injected into the message
     message = cleanInput(message);
     // if there is a non-empty message and a socket connection
