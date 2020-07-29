@@ -83,7 +83,7 @@ $(function() {
       if(message === "!pt"){
         addChatMessage({
           username: "Robô[✔️]",
-          message: "São " + countUser + " participantes"
+          message: "São você " + membros + " os participantes"
         });
       }
       // tell server to execute 'new message' and send along one parameter
@@ -272,6 +272,7 @@ $(function() {
     log(data.username + ' entrou');
     membros.push(data.username)
     addParticipantsMessage(data);
+    console.log(data.username+" entrou")
   });
 
   // Whenever the server emits 'user left', log it in the chat body
