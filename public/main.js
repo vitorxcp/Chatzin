@@ -4,6 +4,7 @@ $(function() {
     localStorage.setItem('i',"[#"+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+"]")
   }
   const id = localStorage.i
+  var membros = []
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
   var COLORS = [
@@ -269,6 +270,7 @@ $(function() {
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user entrou', function (data) {
     log(data.username + ' entrou');
+    membros.push(data.username)
     addParticipantsMessage(data);
   });
 
@@ -279,6 +281,7 @@ $(function() {
     }else{
       log(data.username + ' saiu');
     }
+    membros.push(data.username)
     addParticipantsMessage(data);
     removeChatTyping(data);
   });
