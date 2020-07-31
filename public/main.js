@@ -4,8 +4,6 @@ $(function() {
     localStorage.setItem('i',"[#"+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+"]")
   }
   const id = localStorage.i
-  var x = 0
-  var y = 0
   var membros = []
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
@@ -92,24 +90,6 @@ $(function() {
       socket.emit('new message', message);
     }
   }
-  
-  document.addEventListener('keydown',function(e){
-    if(e.keyCode === 37){
-      socket.emit('andar', 1)
-    }
-    
-    if(e.keyCode === 38){
-      socket.emit('andar', 2)
-    }
-    
-    if(e.keyCode === 39){
-      socket.emit('andar', 3)
-    }
-    
-    if(e.keyCode === 40){
-      socket.emit('andar', 1)
-    }
-  })
 
   // Log a message
   function log (message, options) {
@@ -268,10 +248,6 @@ $(function() {
   $inputMessage.click(function () {
     $inputMessage.focus();
   });
-  
-  function at(){
-    alert('gg')
-  }
 
   // Socket events
 
@@ -290,27 +266,6 @@ $(function() {
   socket.on('new message', function (data) {
     addChatMessage(data);
   });
-  
-  socket.on('andar', function(dir){
-    if(dir === 1){
-      x-=1
-      document.getElementById('pl').style.left=x+"px"
-    }else if(dir === 2){
-    y-=1
-    document.getElementById('pl').style.top=y+"px"
-      
-    }else if(dir === 3){
-    x+=1
-    document.getElementById('pl').style.left=x+"px"
-      
-    }else if(dir === 4){
-    y+=1
-    document.getElementById('pl').style.top=x+"px"
-      
-    }
-  })
-  
-  
 
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user entrou', function (data) {
