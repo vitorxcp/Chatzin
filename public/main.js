@@ -225,7 +225,6 @@ $(function() {
     if (event.which === 13) {
       if (username) {
         sendMessage();
-        socket.emit('move');
         socket.emit('stop typing');
         typing = false;
       } else {
@@ -267,20 +266,16 @@ $(function() {
   socket.on('new message', function (data) {
     addChatMessage(data);
   });
-  
-  socket.on('move', function (data) {
-    alert('moveu')
-  });
 
   // Whenever the server emits 'user joined', log it in the chat body
-  socket.on('user joined', function (data) {
+  socket.on('user entrou', function (data) {
     log(data.username + ' entrou');
     membros.push(data.username)
     addParticipantsMessage(data);
   });
 
   // Whenever the server emits 'user left', log it in the chat body
-  socket.on('user left', function (data) {
+  socket.on('user saiu', function (data) {
     if(data.username === "Guest"){
       log("Guest"+id + ' saiu');
     }else{
