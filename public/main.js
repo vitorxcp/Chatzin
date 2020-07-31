@@ -248,6 +248,10 @@ $(function() {
   $inputMessage.click(function () {
     $inputMessage.focus();
   });
+  
+  function at(){
+    alert()
+  }
 
   // Socket events
 
