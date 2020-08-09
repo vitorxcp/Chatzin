@@ -88,6 +88,7 @@ $(function() {
       }
       // tell server to execute 'new message' and send along one parameter
       socket.emit('new message', message);
+      socket.emit('alerta');
     }
   }
 
@@ -265,6 +266,11 @@ $(function() {
   // Whenever the server emits 'new message', update the chat body
   socket.on('new message', function (data) {
     addChatMessage(data);
+  });
+  
+  // Whenever the server emits 'alerta', log it in the chat body
+  socket.on('alerta', function () {
+    addChatMessage('alerta');
   });
 
   // Whenever the server emits 'user joined', log it in the chat body
