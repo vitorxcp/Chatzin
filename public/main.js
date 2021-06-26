@@ -62,7 +62,7 @@ $(function() {
       .text("CEO")
       .css('color', "red")
       if(a === "vitor_xp[#1958]") a = "vitor_xp"
-if(username === "vitor_xp[#1958]") username = a+`[CEO]`
+if(username === "vitor_xp[#1958]") username = a
       socket.emit('add user', username);
     }
   }
@@ -72,15 +72,10 @@ if(username === "vitor_xp[#1958]") username = a+`[CEO]`
     // Prevent markup from being injected into the message
     message = cleanInput(message);
     // if there is a non-empty message and a socket connection
-     	const ping = new Date();
-	ping.setHours(ping.getHours() - 3);
-	const hora = ping.getHours();
-	const minutos = ping.getMinutes();
-        let hrs = ""+hora+":"+minutos+""
     if (message && connected) {
       $inputMessage.val('');
       addChatMessage({
-        username: username+" - "+hrs,
+        username: username,
         message: "a",
         message: "\n "+message
       });
@@ -115,7 +110,7 @@ if(username === "vitor_xp[#1958]") username = a+`[CEO]`
   
 
   // Adds the visual chat message to the message list
-  function addChatMessage (data, options) {
+  function addChatMessage  (data, options) {
     // Don't fade the message in if there is an 'X was typing'
     var $typingMessages = getTypingMessages(data);
     options = options || {};
@@ -125,23 +120,26 @@ if(username === "vitor_xp[#1958]") username = a+`[CEO]`
     }
 
     var $Div = $('<hr/>')
-      var $aeditado = $('<strong><a>')
-      .text("CEO")
-      .css('color', "red")
+      
     var $usernameDiv = $('<span class="username"/>')
-      .text(data.username+vitor_x)
+      .text(data.username)
       .css('color', getUsernameColor(data.username))
       var $divsoria = $('<br><a>')
       .text("-")
       .css('color', "#fafafa")
-      
+      if(username  === "vitor_xp[CEO]") var $aeditado = $('<strong><a>')
+      .text("[CEO]")
+      .css('color', "red")
+      if(!username  === "vitor_xp[CEO]") var $aeditado = $('<strong><a>')
+      .text("")
+      .css('color', "red")
     var $messageBodyDiv = $('<span class="messageBody">')
       .text(data.message);
     var typingClass = data.typing ? 'typing' : '';
     var $messageDiv = $('<li class="message"/>')
       .data('username', data.username)
       .addClass(typingClass)
-      .append($Div, $usernameDiv, $divsoria, $messageBodyDiv);
+      .append($Div, $usernameDiv, $aeditado, $divsoria, $messageBodyDiv);
 
     addMessageElement($messageDiv, options);
   }
