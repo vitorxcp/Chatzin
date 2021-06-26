@@ -57,14 +57,16 @@ $(function() {
       $chatPage.show();
       $loginPage.off('click');
       $currentInput = $inputMessage.focus();
-
+      let a = username
+      if(a === "vitor_xp[#1958]") a = "vitor_xp"
+if(username === "vitor_xp[#1958]") username = a+$('<a>a</a>')
+      .text("[CEO]")
+      .css('color', "red")
+//if(username === "vitor_xp") username = "vitor_xp[CEO]"
       // Tell the server your username
       socket.emit('add user', username);
     }
   }
-if(username === "vitor_xp[#1958]"){
-username = "vitor_xp[CEO]"
-}
   // Sends a chat message
   function sendMessage () {
     var message = $inputMessage.val();
