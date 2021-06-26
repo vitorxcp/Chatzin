@@ -80,6 +80,12 @@ $(function() {
           message: "Agora tem " + countUser + " participantes"
         });
       }
+      if(message === "!help"){
+        addChatMessage({
+          username: "Robô[✔️]",
+          message: `!pl - total de membros. | pt - nome dos membros.`
+        });
+      }
       if(message === "!pt"){
         addChatMessage({
           username: "Robô[✔️]",
@@ -112,7 +118,7 @@ $(function() {
     
     var $usernameDiv = $('<span class="username"/>')
       .text(data.username)
-      .css('color', getUsernameColor(data.username));
+      .css('color', "#000000");
     var $messageBodyDiv = $('<span class="messageBody">')
       .text(data.message);
 
