@@ -123,10 +123,12 @@ if(username === "vitor_xp[#1958]") username = a+`[CEO]`
 
     var $Div = $('<hr/>')
     
-    var $usernameDiv = $('<span class="username"/>'+$("<a>").text("---")
-      .css('color', getUsernameColor(data.username)))
+    var $usernameDiv = $('<span class="username"/>')
       .text(data.username)
       .css('color', getUsernameColor(data.username))
+      var $divsoria = $('<br><a>')
+      .text("-")
+      .css('color', "#fafafa")
     var $messageBodyDiv = $('<span class="messageBody">')
       .text(data.message);
 
@@ -134,7 +136,7 @@ if(username === "vitor_xp[#1958]") username = a+`[CEO]`
     var $messageDiv = $('<li class="message"/>')
       .data('username', data.username)
       .addClass(typingClass)
-      .append($Div, $usernameDiv, $messageBodyDiv);
+      .append($Div, $usernameDiv, $divsoria, $messageBodyDiv);
 
     addMessageElement($messageDiv, options);
   }
