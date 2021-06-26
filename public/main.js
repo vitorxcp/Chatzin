@@ -65,7 +65,7 @@ usering = cleanInput($usernameInput.val().trim());
       .text("CEO")
       .css('color', "red")
       if(a === "vitor_xp [MEMBRO]") a = "vitor_xp"
-if(username === "vitor_xp [MEMBRO]") username = a+` [VIP++]`
+if(username === "vitor_xp [MEMBRO]") username = a+` [CEO]`
 if(a === "Pedro M [MEMBRO]") a = "Pedro M"
 if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
       socket.emit('add user', username);
@@ -154,7 +154,7 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
     if(data.username === "Pedro M [VIP++]") coloruser = "#5FDA55"
       //getUsernameColor(data.username)
         let hrs = ""+hora+":"+minutos+""
-    var $usernameDiv = $('<span class="username"/>')
+    var $usernameDiv = $('<a href="#user"><strong><span class="username"/>')
       .text(data.username+" - "+hrs)
       .css('color', coloruser)
       var $divsoria = $('<br><a>')
