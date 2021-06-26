@@ -9,7 +9,8 @@
   "dependencies": {
     "coffee-script": "*",
     "express": "^4.12.4",
-    "socket.io": "*"
+    "socket.io": "*",
+    "colors": "^1.4.0"
   },
   "engines": {
     "node": "4.4.5"

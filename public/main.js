@@ -59,11 +59,7 @@ $(function() {
       $currentInput = $inputMessage.focus();
       let a = username
       if(a === "vitor_xp[#1958]") a = "vitor_xp"
-if(username === "vitor_xp[#1958]") username = a+$('<a>a</a>')
-      .text("[CEO]")
-      .css('color', "red")
-//if(username === "vitor_xp") username = "vitor_xp[CEO]"
-      // Tell the server your username
+if(username === "vitor_xp[#1958]") username = a+`[CEO]`
       socket.emit('add user', username);
     }
   }
