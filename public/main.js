@@ -69,11 +69,17 @@ if(username === "vitor_xp[#1958]") username = a+`[CEO]`
     // Prevent markup from being injected into the message
     message = cleanInput(message);
     // if there is a non-empty message and a socket connection
+     	const ping = new Date();
+	ping.setHours(ping.getHours() - 3);
+	const hora = ping.getHours();
+	const minutos = ping.getMinutes();
+        let hrs = ""+hora+":"+minutos+""
     if (message && connected) {
       $inputMessage.val('');
       addChatMessage({
-        username: username,
-        message: message
+        username: username+" - "+hrs,
+        message: "a",
+        message: "\n "+message
       });
       if(message === "!pl"){
         addChatMessage({
@@ -117,7 +123,8 @@ if(username === "vitor_xp[#1958]") username = a+`[CEO]`
 
     var $Div = $('<hr/>')
     
-    var $usernameDiv = $('<span class="username"/>')
+    var $usernameDiv = $('<span class="username"/>'+$("<a>").text("---")
+      .css('color', getUsernameColor(data.username)))
       .text(data.username)
       .css('color', getUsernameColor(data.username))
     var $messageBodyDiv = $('<span class="messageBody">')
