@@ -1,7 +1,7 @@
 $(function() {
   if(localStorage.tt === 'a'){}else{
     localStorage.setItem('tt','a')
-    localStorage.setItem('i',"[#"+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+""+Math.floor(Math.random()*9)+"]")
+    localStorage.setItem('i',"[a]")
   }
   const id = localStorage.i
   var membros = []
@@ -49,6 +49,7 @@ $(function() {
 
     if(username === id){
       username = "Guest"+id
+      console.log(id)
     }
     // If the username is valid
     if (username) {
@@ -207,7 +208,7 @@ $(function() {
       return $(this).data('username') === data.username;
     });
   }
-
+//  <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
   // Gets the color of a username through our hash function
   function getUsernameColor (username) {
     // Compute hash code
@@ -279,6 +280,7 @@ $(function() {
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user entrou', function (data) {
     log(data.username + ' entrou');
+   log("Guest"+id + ' saiu');
     membros.push(data.username)
     addParticipantsMessage(data);
   });
@@ -287,8 +289,10 @@ $(function() {
   socket.on('user saiu', function (data) {
     if(data.username === "Guest"){
       log("Guest"+id + ' saiu');
+      console.log("Guest"+id + ' saiu');
     }else{
       log(data.username + ' saiu');
+      console.log(data.username + ' saiu');
     }
     let as = membros.indexOf(data.username)
     membros.splice(as, 1)
