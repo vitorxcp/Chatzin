@@ -66,6 +66,8 @@ usering = cleanInput($usernameInput.val().trim());
       .css('color', "red")
       if(a === "vitor_xp [MEMBRO]") a = "vitor_xp"
 if(username === "vitor_xp [MEMBRO]") username = a+` [CEO]`
+ if(a === "Papel [MEMBRO]") a = "Papel"
+if(username === "Papel [MEMBRO]") username = a+` [MOD+]`
 if(a === "Pedro M [MEMBRO]") a = "Pedro M"
 if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
       socket.emit('add user', username);
@@ -186,6 +188,7 @@ return  addChatMessage({
     if(data.username === "vitor_xp [CEO]") coloruser = "red"
     if(data.username === "Pedro M [VIP++]") coloruser = "#5FDA55"
     if(data.username === "BOT [✔️][CEO]") coloruser = "#00ADFF"
+     if(data.username === "Papel [MOD+]") coloruser = "#00A6D8"
       //getUsernameColor(data.username)
         let hrs = ""+hora+":"+minutos+""
     var $usernameDiv = $('<span class="username"/>')
