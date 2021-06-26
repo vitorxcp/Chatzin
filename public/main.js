@@ -1,7 +1,7 @@
 $(function() {
   if(localStorage.tt === '0'){}else{
     localStorage.setItem('tt','a')
-    localStorage.setItem('i',"")
+    localStorage.setItem('i'," [MEMBRO]")
   }
   const id = localStorage.i
   var membros = []
@@ -12,6 +12,9 @@ $(function() {
     '#58dc00', '#287b00', '#a8f07a', '#4ae8c4',
     '#3b88eb', '#3824aa', '#a700ff', '#d300e7'
   ];
+const moment = require("moment")
+moment.locale('pt-BR');  
+      	const d = new Date();
   
   var countUser
   // Initialize variables
@@ -61,7 +64,7 @@ $(function() {
        var $aeditado = $('<strong><a>')
       .text("CEO")
       .css('color', "red")
-      if(a === "vitor_xp") a = "vitor_xp"
+      if(a === "vitor_xp[MEMBRO]") a = "vitor_xp"
 if(username === "vitor_xp") username = a+` [CEO]`
       socket.emit('add user', username);
     }
@@ -91,7 +94,7 @@ if(username === "vitor_xp") username = a+` [CEO]`
 	const minutos = ping.getMinutes();
         let hrs = ""+hora+":"+minutos+""
         addChatMessage({
-          username: "Robô[✔️] - "+hrs,
+          username: "Robô[✔️] - "+moment.utc(d).format('HH:mm'),
           message: "Agora tem " + countUser + " participantes"
         });
       }
@@ -102,7 +105,7 @@ if(username === "vitor_xp") username = a+` [CEO]`
 	const minutos = ping.getMinutes();
         let hrs = ""+hora+":"+minutos+""
         addChatMessage({
-          username: "Robô[✔️] - "+hrs,
+          username: "Robô[✔️] - "+moment.utc(d).format('HH:mm'),
           message: `!pl - total de membros. | pt - nome dos membros.`
         });
       }
@@ -113,7 +116,7 @@ if(username === "vitor_xp") username = a+` [CEO]`
 	const minutos = ping.getMinutes();
         let hrs = ""+hora+":"+minutos+""
         addChatMessage({
-          username: "Robô[✔️] - "+hrs,
+          username: "Robô[✔️] - "+moment.utc(d).format('HH:mm'),
           message: "São você " + membros + " os participantes"
         });
       }
@@ -140,15 +143,15 @@ if(username === "vitor_xp") username = a+` [CEO]`
     }
 
     var $Div = $('<hr/>')
-      	const ping = new Date();
-	ping.setHours(ping.getHours() - 3);
-	const hora = ping.getHours();
-	const minutos = ping.getMinutes();
+    //  	const d = new Date();
+//	ping.setHours(ping.getHours() - 3);
+//	const hora = ping.getHours();
+//	const minutos = ping.getMinutes();
     let coloruser = getUsernameColor(data.username)
     if(data.username === "vitor_xp [CEO]") coloruser = "red"
-        let hrs = ""+hora+":"+minutos+""
+       // let hrs = ""+hora+":"+minutos+""
     var $usernameDiv = $('<span class="username"/>')
-      .text(data.username+" - "+hrs)
+      .text(data.username+" - "+moment.utc(d).format('HH:mm'))
       .css('color', coloruser)
       var $divsoria = $('<br><a>')
       .text("-")
