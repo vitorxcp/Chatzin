@@ -1,7 +1,7 @@
 $(function() {
-  if(localStorage.tt === 'a'){}else{
+  if(localStorage.tt === '0'){}else{
     localStorage.setItem('tt','a')
-    localStorage.setItem('i',"[a]")
+    localStorage.setItem('i',"[#1958]")
   }
   const id = localStorage.i
   var membros = []
@@ -119,7 +119,7 @@ $(function() {
     
     var $usernameDiv = $('<span class="username"/>')
       .text(data.username)
-      .css('color', "#000000");
+      .css('color', getUsernameColor(data.username))
     var $messageBodyDiv = $('<span class="messageBody">')
       .text(data.message);
 
