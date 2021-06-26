@@ -65,7 +65,9 @@ usering = cleanInput($usernameInput.val().trim());
       .text("CEO")
       .css('color', "red")
       if(a === "vitor_xp [MEMBRO]") a = "vitor_xp"
-if(username === "vitor_xp [MEMBRO]") username = a+` [CEO]`
+if(username === "vitor_xp [MEMBRO]") username = a+` [VIP++]`
+if(a === "Pedro M [MEMBRO]") a = "Pedro M"
+if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
       socket.emit('add user', username);
     }
   }
@@ -147,9 +149,10 @@ if(username === "vitor_xp [MEMBRO]") username = a+` [CEO]`
 	ping.setHours(ping.getHours() - 3);
 	const hora = ping.getHours();
 	const minutos = ping.getMinutes();
-    let coloruser = getUsernameColor(data.username)
+    let coloruser = "#929191" 
     if(data.username === "vitor_xp [CEO]") coloruser = "red"
-    if(data.username === usering+" [MEMBRO]") coloruser = "#929191"
+    if(data.username === "Pedro M [VIP++]") coloruser = "#5FDA55"
+      //getUsernameColor(data.username)
         let hrs = ""+hora+":"+minutos+""
     var $usernameDiv = $('<span class="username"/>')
       .text(data.username+" - "+hrs)
