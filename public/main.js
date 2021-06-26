@@ -58,6 +58,9 @@ $(function() {
       $loginPage.off('click');
       $currentInput = $inputMessage.focus();
       let a = username
+       var $aeditado = $('<strong><a>')
+      .text("CEO")
+      .css('color', "red")
       if(a === "vitor_xp[#1958]") a = "vitor_xp"
 if(username === "vitor_xp[#1958]") username = a+`[CEO]`
       socket.emit('add user', username);
@@ -122,16 +125,18 @@ if(username === "vitor_xp[#1958]") username = a+`[CEO]`
     }
 
     var $Div = $('<hr/>')
-    
+      var $aeditado = $('<strong><a>')
+      .text("CEO")
+      .css('color', "red")
     var $usernameDiv = $('<span class="username"/>')
-      .text(data.username)
+      .text(data.username+vitor_x)
       .css('color', getUsernameColor(data.username))
       var $divsoria = $('<br><a>')
       .text("-")
       .css('color', "#fafafa")
+      
     var $messageBodyDiv = $('<span class="messageBody">')
       .text(data.message);
-
     var typingClass = data.typing ? 'typing' : '';
     var $messageDiv = $('<li class="message"/>')
       .data('username', data.username)
