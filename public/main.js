@@ -74,8 +74,9 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
   // Sends a chat message
   function sendMessage () {
     var message = $inputMessage.val();
+      var message1 = $inputMessage.val();
     // Prevent markup from being injected into the message
-    message = cleanInput(message);
+   // message = cleanInput(message);
     // if there is a non-empty message and a socket connection
      	const ping = new Date();
 	ping.setHours(ping.getHours() - 3);
@@ -109,20 +110,19 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
            return;
          }
 
-         if(message === "ola" | message === "Ola" | message === "Olá" | message === "oi" | message === "Oi"){
-      //   if(username === "vitor_xp [CEO]") {
-           addChatMessage({
-          username: "BOT [✔️][CEO]",
-        message: "Opa bb, como vai, tudo em cima?"
-        });
-
-         }
+       
           
    addChatMessage({
           username: "BOT [✔️][CEO]",
         message: "Comando indisponível para uso..."
         });
     }
+        if(message1 === "ola" || message1 === "Ola" || message1 === "Olá" || message1 === "oi" || message1 === "Oi"){
+           addChatMessage({
+          username: "BOT [✔️][CEO]",
+        message: "Opa bb, como vai, tudo em cima?"
+        });
+         }
         if(message === "!help"){
           //addChatTyping(username)
           if(username === "vitor_xp [CEO]") {
