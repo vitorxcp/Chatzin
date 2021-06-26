@@ -101,11 +101,27 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
         });
       }
     if(message === "!teste"){
-      addChatMessage({
-username: "vitor_xp [CEO]",
-message: $inputMessage.val()
-        
-})
+         if(username === "vitor_xp [CEO]") {
+           addChatMessage({
+          username: "BOT [✔️][CEO]",
+        message: "Opa bb, como vai?"
+        });
+           return;
+         }
+
+         if(message === "ola" | message === "Ola" | message === "Olá" | message === "oi" | message === "Oi"){
+      //   if(username === "vitor_xp [CEO]") {
+           addChatMessage({
+          username: "BOT [✔️][CEO]",
+        message: "Opa bb, como vai, tudo em cima?"
+        });
+
+         }
+          
+   addChatMessage({
+          username: "BOT [✔️][CEO]",
+        message: "Comando indisponível para uso..."
+        });
     }
         if(message === "!help"){
           //addChatTyping(username)
