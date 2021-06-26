@@ -89,7 +89,7 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
         message: "a",
         message: "\n "+message
       });
-      if(message === "!pl"){
+      if(message === "!users"){
         	const ping = new Date();
 	ping.setHours(ping.getHours() - 3);
 	const hora = ping.getHours();
@@ -100,30 +100,24 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
           message: "Agora tem " + countUser + " participantes"
         });
       }
-      if(message === "!help"){
-        	const ping = new Date();
-	ping.setHours(ping.getHours() - 3);
-	const hora = ping.getHours();
-	const minutos = ping.getMinutes();
-        let hrs = ""+hora+":"+minutos+""
-        addChatMessage({
-          username: "BOT[✔️][CEO]",
-          message: `!users - total de membros. | !members - nome dos membros.`
-        });
-      }
+    
         if(message === "!help"){
-          if(data.username === "")
+          if(username === "vitor_xp [CEO]") return  addChatMessage({
+          username: "BOT[✔️][CEO]",
+          message: `!users - total de membros. | !members - nome dos membros. | !ban - banir alguem.`
+        });
         	const ping = new Date();
 	ping.setHours(ping.getHours() - 3);
 	const hora = ping.getHours();
 	const minutos = ping.getMinutes();
         let hrs = ""+hora+":"+minutos+""
-        addChatMessage({
+       
+          addChatMessage({
           username: "BOT[✔️][CEO]",
           message: `!users - total de membros. | !members - nome dos membros.`
         });
       }
-      if(message === "!pt"){
+      if(message === "!members"){
         	const ping = new Date();
 	ping.setHours(ping.getHours() - 3);
 	const hora = ping.getHours();
@@ -167,7 +161,7 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
     if(data.username === "BOT[✔️][CEO]") coloruser = "#00ADFF"
       //getUsernameColor(data.username)
         let hrs = ""+hora+":"+minutos+""
-    var $usernameDiv = $('<a><strong><span class="username"/>')
+    var $usernameDiv = $('<span class="username"/>')
       .text(data.username+" - "+hrs)
       .css('color', coloruser)
       var $divsoria = $('<br><a>')
@@ -332,8 +326,8 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
 
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user entrou', function (data) {
-    log(data.username + ' entrou');
-   log("Guest"+id + ' saiu');
+    log("[+] "+data.username + ' entrou');
+//   log("Guest"+id + ' saiu');
     membros.push(data.username)
     addParticipantsMessage(data);
   });
@@ -344,7 +338,7 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
       log("Guest"+id + ' saiu');
       console.log("Guest"+id + ' saiu');
     }else{
-      log(data.username + ' saiu');
+      log("[-] "+data.username + ' saiu');
       console.log(data.username + ' saiu');
     }
     let as = membros.indexOf(data.username)
