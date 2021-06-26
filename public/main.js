@@ -62,7 +62,9 @@ $(function() {
       socket.emit('add user', username);
     }
   }
-
+if(username === "vitor_xp[#1958]"){
+username = "vitor_xp[CEO]"
+}
   // Sends a chat message
   function sendMessage () {
     var message = $inputMessage.val();
