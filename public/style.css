@@ -65,7 +65,7 @@ ul {
 .login.page .form .usernameInput {
   background-color: transparent;
   border: none;
-  border-bottom: 3px solid #00E0D7;
+  border-bottom: 3px solid #00FF89;
   outline: none;
   padding-bottom: 10px;
   text-align: center;
@@ -82,7 +82,7 @@ ul {
 }
 
 .login.page .title, .login.page .usernameInput {
-  color: #;
+  color: #02A29C;
   font-weight: 50;
 }
 
@@ -95,11 +95,11 @@ ul {
 /* Font */
 
 .messages {
-  font-size: 100%;
+  font-size: 120%;
 }
 
 .inputMessage {
-  font-size: 100%;
+  font-size: 120%;
 }
 
 .log {

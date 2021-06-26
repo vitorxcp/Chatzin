@@ -96,7 +96,7 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
 	const minutos = ping.getMinutes();
         let hrs = ""+hora+":"+minutos+""
         addChatMessage({
-          username: "Robô[✔️] - "+hrs,
+          username: "BOT[✔️][CEO]",
           message: "Agora tem " + countUser + " participantes"
         });
       }
@@ -107,8 +107,20 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
 	const minutos = ping.getMinutes();
         let hrs = ""+hora+":"+minutos+""
         addChatMessage({
-          username: "Robô[✔️] - "+hrs,
-          message: `!pl - total de membros. | pt - nome dos membros.`
+          username: "BOT[✔️][CEO]",
+          message: `!users - total de membros. | !members - nome dos membros.`
+        });
+      }
+        if(message === "!help"){
+          if(data.username === "")
+        	const ping = new Date();
+	ping.setHours(ping.getHours() - 3);
+	const hora = ping.getHours();
+	const minutos = ping.getMinutes();
+        let hrs = ""+hora+":"+minutos+""
+        addChatMessage({
+          username: "BOT[✔️][CEO]",
+          message: `!users - total de membros. | !members - nome dos membros.`
         });
       }
       if(message === "!pt"){
@@ -118,8 +130,8 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
 	const minutos = ping.getMinutes();
         let hrs = ""+hora+":"+minutos+""
         addChatMessage({
-          username: "Robô[✔️] - "+hrs,
-          message: "São você " + membros + " os participantes"
+          username: "BOT[✔️][CEO]",
+          message: "Você, " + membros + "."
         });
       }
       // tell server to execute 'new messages' and send along one parameter
@@ -152,9 +164,10 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
     let coloruser = "#929191" 
     if(data.username === "vitor_xp [CEO]") coloruser = "red"
     if(data.username === "Pedro M [VIP++]") coloruser = "#5FDA55"
+    if(data.username === "BOT[✔️][CEO]") coloruser = "#00ADFF"
       //getUsernameColor(data.username)
         let hrs = ""+hora+":"+minutos+""
-    var $usernameDiv = $('<a href="#user"><strong><span class="username"/>')
+    var $usernameDiv = $('<a><strong><span class="username"/>')
       .text(data.username+" - "+hrs)
       .css('color', coloruser)
       var $divsoria = $('<br><a>')
