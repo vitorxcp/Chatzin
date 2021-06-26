@@ -100,13 +100,21 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
           message: "Agora tem " + countUser + " participantes"
         });
       }
-    
+    if(message === "!teste"){
+      addChatMessage({
+username: "vitor_xp [CEO]",
+message: $inputMessage.val()
+        
+})
+    }
         if(message === "!help"){
-          addChatTyping(username)
-          if(username === "vitor_xp [CEO]") return  addChatMessage({
+          //addChatTyping(username)
+          if(username === "vitor_xp [CEO]") {
+//removeChatTyping(username)
+return  addChatMessage({
           username: "BOT [✔️][CEO]",
-          message: `!users - total de membros. | !members - nome dos membros. | !ban - banir alguem.`
-        });
+          message: `!users - total de membros. | !members - nome dos membros.`
+        });}
         	const ping = new Date();
 	ping.setHours(ping.getHours() - 3);
 	const hora = ping.getHours();
@@ -117,6 +125,7 @@ if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
           username: "BOT [✔️][CEO]",
           message: `!users - total de membros. | !members - nome dos membros.`
         });
+       //   removeChatTyping(username)
       }
       if(message === "!members") {
         	const ping = new Date();
