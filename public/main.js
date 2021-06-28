@@ -42,7 +42,7 @@ $(function() {
       message += "[]" + data.numUsers + " Participantes.]";
     }
     countUser = data.numUsers
-    log(message);
+   // log(message);
   }
 
   // Sets the client's username
@@ -188,8 +188,9 @@ return  addChatMessage({
 
   // Log a message
   function log (message, options) {
-    var $el = $('<li>').addClass('log').text(message);
-    addMessageElement($el, options);
+    var $el = $('<li><br>').addClass('log').text(message);
+     var $el2 = $('<br>').text(" ");
+    addMessageElement($el ,$el2 , options);
   }
   
 
@@ -371,7 +372,7 @@ function amsfd (){
     // membros.push(data.username)
     connected = true;
     // Display the welcome message
-    var message = "Bem vindo a o chat";
+    var message = "Você Acaba de Entrar No Chat, Atualmente Temos "+data.numUsers+" Usuarios Aqui!";
     log(message, {
       prepend: true
     });
