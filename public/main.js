@@ -4,7 +4,7 @@ $(function() {
     localStorage.setItem('i'," [MEMBRO]")
   }
   const id = localStorage.i
-  var membros = []
+  var membros = ["Você"]
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
   var COLORS = [
@@ -152,8 +152,8 @@ return  addChatMessage({
 	const minutos = ping.getMinutes();
         let hrs = ""+hora+":"+minutos+""
         addChatMessage({
-          username: "BOT[✔️][CEO]",
-          message: "Você, " + membros + "."
+          username: "BOT [✔️][CEO]",
+          message: "" + membros + "."
         });
       }
 
