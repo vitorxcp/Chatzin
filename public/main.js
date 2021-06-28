@@ -37,9 +37,9 @@ $(function() {
   function addParticipantsMessage (data) {
     var message = '';
     if (data.numUsers === 1) {
-      message += "1 Participante.";
+      message += "[1 Participante.]";
     } else {
-      message += "" + data.numUsers + " Participantes.";
+      message += "[]" + data.numUsers + " Participantes.]";
     }
     countUser = data.numUsers
     log(message);
@@ -114,21 +114,21 @@ if(username2 === "Pedro M [MEMBRO]") username2 = a+` [VIP++]`
         message: "a",
         message: "\n "+message
       });
-      if(message === "!users"){
+      if(message === "/users"){
         	const ping = new Date();
 	ping.setHours(ping.getHours() - 3);
 	const hora = ping.getHours();
 	const minutos = ping.getMinutes();
         let hrs = ""+hora+":"+minutos+""
         addChatMessage({
-          username: "BOT [✔️][CEO]",
-          message: "Agora tem " + countUser + " participantes"
+          username: "Chatzin [BOT]",
+          message: "Temos " + countUser + " Participantes."
         });
       }
-    if(message === "!teste"){
+    if(message === "/teste"){
          if(username === "vitor_xp [CEO]") {
            addChatMessage({
-          username: "BOT [✔️][CEO]",
+          username: "Chatzin [BOT]",
         message: "Opa bb, como vai?"
         });
            return;
@@ -141,19 +141,14 @@ if(username2 === "Pedro M [MEMBRO]") username2 = a+` [VIP++]`
         message: "Comando indisponível para uso..."
         });
     }
-        if(message1 === "ola" || message1 === "Ola" || message1 === "Olá" || message1 === "oi" || message1 === "Oi"){
-           addChatMessage({
-          username: "Chatzin [BOT]",
-        message: "Opa bb, como vai, tudo em cima?"
-        });
-         }
+       
         if(message === "/help" | message === "/ajuda"){
           //addChatTyping(username)
           if(username === "vitor_xp [CEO]") {
 //removeChatTyping(username)
 return  addChatMessage({
           username: "Chatzin [BOT]",
-          message: `/users - total de membros. | /members1234 - nome dos membros. | /ping - veja o ping do WebSocket.`
+          message: `/users - total de membros. | /members1234 - nome dos membros. | /ping - veja o ping do WebSocket. | /teste - teste de comandos.`
         });}
         	const ping = new Date();
 	ping.setHours(ping.getHours() - 3);
