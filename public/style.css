@@ -18,12 +18,11 @@
   box-sizing: border-box;
 }
 #jump {
-      min-height: 85vh;
-    linear-gradient(#43b1ff,#067acc): ;
+      min-height: 0.50vh;
     animation: background-scroll 60s linear infinite;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 15px rgb(0 0 0 / 30%);
+    box-shadow: 0 0 15px rgb(0 0 0 / 500%);
 }
 html {
   font-weight: 300;

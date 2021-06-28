@@ -204,7 +204,7 @@ return  addChatMessage({
       $typingMessages.remove();
     }
 
-    var $Div = $('<div id="jump">')
+    var $Div = $('</br><div id="jump"></div></br>')
       	const ping = new Date();
 	ping.setHours(ping.getHours() - 3);
 	const hora = ping.getHours();
