@@ -225,10 +225,10 @@ return  addChatMessage({
       .css('color', coloruser)
       var $divsoria = $('<br><a>')
       .text("-")
-      .css('color', "#fafafa")
+      .css('color', "#36393f")
       
     var $messageBodyDiv = $('<span class="messageBody">')
-      .text(data.message);
+      .text(data.message).css("color", "#fafafa");
     var typingClass = data.typing ? 'typing' : '';
     var $messageDiv = $('<li class="message"/>')
       .data('username', data.username)
