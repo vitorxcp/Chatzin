@@ -47,7 +47,7 @@ $(function() {
 
   // Sets the client's username
   function setUsername () {
-    username = cleanInput($usernameInput.val().trim()+id);
+    username = cleanInput($usernameInput.val().trim());
 usering = cleanInput($usernameInput.val().trim());
     if(username === id){
       username = "Guest"+id
