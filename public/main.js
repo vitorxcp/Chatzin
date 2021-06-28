@@ -47,7 +47,7 @@ $(function() {
 
   // Sets the client's username
   function setUsername () {
-    username = cleanInput($usernameInput.val().trim());
+    username = cleanInput($usernameInput.val().trim()+id);
 usering = cleanInput($usernameInput.val().trim());
     if(username === id){
       username = "Guest"+id
@@ -382,7 +382,7 @@ return  addChatMessage({
   socket.on('user entrou', function (data) {
     log("[+] "+data.username + ' entrou');
 //   log("Guest"+id + ' saiu');
-    membros.push(data.username)
+    membros.push(cleanInput($usernameInput.val().trim()))
     addParticipantsMessage(data);
   });
 
@@ -395,7 +395,7 @@ return  addChatMessage({
       log("[-] "+data.username + ' saiu');
       console.log(data.username + ' saiu');
     }
-    let as = membros.indexOf(data.username)
+    let as = " "+membros.indexOf(cleanInput($usernameInput.val().trim()))
     membros.splice(as, 1)
     addParticipantsMessage(data);
     removeChatTyping(data);
