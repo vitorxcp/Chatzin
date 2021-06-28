@@ -4,7 +4,7 @@ $(function() {
     localStorage.setItem('i'," [MEMBRO]")
   }
   const id = localStorage.i
-  var membros = ["Você"]
+  var membros = ["Você", ]
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
   var COLORS = [
@@ -308,9 +308,12 @@ return  addChatMessage({
   }
 //  <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
   // Gets the color of a username through our hash function
-  function getUsernameColor (username) {
+  function getUsernameColor (username, usering) {
     // Compute hash code
     var hash = 7;
+    for (var i = 0; i < usering.length; i++) {
+       hash = usering.charCodeAt(i) + (hash << 5) - hash;
+    }
     for (var i = 0; i < username.length; i++) {
        hash = username.charCodeAt(i) + (hash << 5) - hash;
     }
@@ -377,22 +380,22 @@ return  addChatMessage({
 
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user entrou', function (data) {
-    log("[+] "+data.usering + ' entrou');
+    log("[+] "+data.username + ' entrou');
 //   log("Guest"+id + ' saiu');
-    membros.push(data.usering)
+    membros.push(data.username)
     addParticipantsMessage(data);
   });
 
   // Whenever the server emits 'user left', log it in the chat body
   socket.on('user saiu', function (data) {
-    if(data.usering === "Guest"){
+    if(data.username === "Guest"){
       log("Guest"+id + ' saiu');
       console.log("Guest"+id + ' saiu');
     }else{
-      log("[-] "+data.usering + ' saiu');
-      console.log(data.usering + ' saiu');
+      log("[-] "+data.username + ' saiu');
+      console.log(data.username + ' saiu');
     }
-    let as = membros.indexOf(data.usering)
+    let as = membros.indexOf(data.username)
     membros.splice(as, 1)
     addParticipantsMessage(data);
     removeChatTyping(data);
