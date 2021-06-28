@@ -147,13 +147,13 @@ if(username2 === "Pedro M [MEMBRO]") username2 = a+` [VIP++]`
         message: "Opa bb, como vai, tudo em cima?"
         });
          }
-        if(message === "!help"){
+        if(message === "/help" | message === "/ajuda"){
           //addChatTyping(username)
           if(username === "vitor_xp [CEO]") {
 //removeChatTyping(username)
 return  addChatMessage({
           username: "BOT [✔️][CEO]",
-          message: `!users - total de membros. | !members - nome dos membros.`
+          message: `/users - total de membros. | /members1234 - nome dos membros. | /ping - veja o ping do WebSocket.`
         });}
         	const ping = new Date();
 	ping.setHours(ping.getHours() - 3);
@@ -163,11 +163,11 @@ return  addChatMessage({
        
           addChatMessage({
           username: "BOT [✔️][CEO]",
-          message: `!users - total de membros. | !members - nome dos membros.`
+          message: `/users - total de membros. | /ping - veja o ping do WebSocket.`
         });
        //   removeChatTyping(username)
       }
-      if(message === "!members") {
+      if(message === "/members1234") {
           amsfd()
         	const ping = new Date();
 	ping.setHours(ping.getHours() - 3);
@@ -179,7 +179,13 @@ return  addChatMessage({
           message: "" + membros + "."
         });
       }
-
+ if(message === "/ping") {
+        
+        addChatMessage({
+          username: "BOT [✔️][CEO]",
+          message: "WebSocket API Ping: ...ms."
+        });
+      }
       // tell server to execute 'new messages' and send along one parameter
       socket.emit('new message', message);
     }
