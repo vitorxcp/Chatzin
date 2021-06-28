@@ -3,8 +3,9 @@
   width: 0.5em;
 }
 ::-webkit-scrollbar-track {
-  background: #15171a00;
+  background: hsl(210,calc(var(--saturation-factor, 1)*9.8%),20%);
   border-radius: 4em;
+  
 }
 ::-webkit-scrollbar-thumb {
   width: 1000000000%;
