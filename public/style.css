@@ -103,7 +103,7 @@ ul {
 }
 
 .log {
-  color: black;
+  color: #36393f;
   font-size: 70%;
   margin: 5px;
   text-align: center;
@@ -124,7 +124,7 @@ ul {
 }
 
 .message.typing .messageBody {
-  color: black;
+  color: #36393f;
 }
 
 .username {
@@ -137,7 +137,7 @@ ul {
 /* Input */
 
 .inputMessage {
-  border: 10px solid #000;
+  border: 10px solid #36393f;
   bottom: 0;
   height: 60px;
   left: 0;
