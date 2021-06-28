@@ -137,13 +137,13 @@ if(username2 === "Pedro M [MEMBRO]") username2 = a+` [VIP++]`
        
           
    addChatMessage({
-          username: "BOT [✔️][CEO]",
+          username: "Chatzin [BOT]",
         message: "Comando indisponível para uso..."
         });
     }
         if(message1 === "ola" || message1 === "Ola" || message1 === "Olá" || message1 === "oi" || message1 === "Oi"){
            addChatMessage({
-          username: "BOT [✔️][CEO]",
+          username: "Chatzin [BOT]",
         message: "Opa bb, como vai, tudo em cima?"
         });
          }
@@ -152,7 +152,7 @@ if(username2 === "Pedro M [MEMBRO]") username2 = a+` [VIP++]`
           if(username === "vitor_xp [CEO]") {
 //removeChatTyping(username)
 return  addChatMessage({
-          username: "BOT [✔️][CEO]",
+          username: "Chatzin [BOT]",
           message: `/users - total de membros. | /members1234 - nome dos membros. | /ping - veja o ping do WebSocket.`
         });}
         	const ping = new Date();
@@ -162,7 +162,7 @@ return  addChatMessage({
         let hrs = ""+hora+":"+minutos+""
        
           addChatMessage({
-          username: "BOT [✔️][CEO]",
+          username: "Chatzin [BOT]",
           message: `/users - total de membros. | /ping - veja o ping do WebSocket.`
         });
        //   removeChatTyping(username)
@@ -175,14 +175,14 @@ return  addChatMessage({
 	const minutos = ping.getMinutes();
         let hrs = ""+hora+":"+minutos+""
         addChatMessage({
-          username: "BOT [✔️][CEO]",
+          username: "Chatzin [BOT]",
           message: "" + membros + "."
         });
       }
  if(message === "/ping") {
     
         addChatMessage({
-          username: "BOT [✔️][CEO]",
+          username: "Chatzin [BOT]",
           message: "WebSocket API Ping: ...ms. | Site API Ping: ...ms."
         });
       }
@@ -216,7 +216,7 @@ return  addChatMessage({
     let coloruser = "#929191" 
     if(data.username === "vitor_xp [CEO]") coloruser = "red"
     if(data.username === "Pedro M [VIP++]") coloruser = "#5FDA55"
-    if(data.username === "BOT [✔️][CEO]") coloruser = "#00ADFF"
+    if(data.username === "Chatzin [BOT]") coloruser = "#00ADFF"
      if(data.username === "Papel [MOD+]") coloruser = "#00A6D8"
       //getUsernameColor(data.username)
         let hrs = ""+hora+":"+minutos+""
