@@ -1,4 +1,17 @@
 /* Fix user-agent */
+::-webkit-scrollbar {
+  width: 0.3em;
+}
+::-webkit-scrollbar-track {
+  background: #15171a00;
+  border-radius: 2em;
+}
+::-webkit-scrollbar-thumb {
+  width: 1000000000%;
+  font-size: 100000000%;
+  background: #15171a;
+  border-radius: 10em;
+}
 
 * {
   box-sizing: border-box;
@@ -9,18 +22,14 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-html, input {
-  font-family:
-    "HelveticaNeue-Light",
-    "Helvetica Neue Light",
-    "Helvetica Neue",
-    Helvetica,
-    Arial,
-    "Lucida Grande",
-    sans-serif;
+html,
+input {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -81,7 +90,8 @@ ul {
   letter-spacing: 3px;
 }
 
-.login.page .title, .login.page .usernameInput {
+.login.page .title,
+.login.page .usernameInput {
   color: #02A29C;
   font-weight: 50;
 }
