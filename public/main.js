@@ -4,7 +4,7 @@ $(function() {
     localStorage.setItem('i'," [MEMBRO]")
   }
   const id = localStorage.i
-  var membros = ["Você", ]
+  var membros = ["Você"]
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
   var COLORS = [
@@ -47,16 +47,13 @@ $(function() {
 
   // Sets the client's username
   function setUsername () {
-    username = cleanInput($usernameInput.val().trim()+id);
-usering = cleanInput($usernameInput.val().trim());
+    username = cleanInput($usernameInput.val().trim());
+usering = "user"
     if(username === id){
       username = "Guest"+id
       console.log(id)
     }
-    if(usering === id){
-      usering = "Guest"+id
-      console.log(id)
-    }
+
     // If the username is valid
     if (username) {
       $loginPage.fadeOut();
@@ -75,23 +72,7 @@ if(a === "Pedro M [MEMBRO]") a = "Pedro M"
 if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
       socket.emit('add user', username);
     }
-        if (usering) {
-      $loginPage.fadeOut();
-      $chatPage.show();
-      $loginPage.off('click');
-      $currentInput = $inputMessage.focus();
-      let a = usering
-       var $aeditado = $('<strong><a>')
-      .text("CEO")
-      .css('color', "red")
-      if(a === "vitor_xp [MEMBRO]") a = "vitor_xp"
-if(usering === "vitor_xp [MEMBRO]") usering = a+` [CEO]`
- if(a === "Papel [MEMBRO]") a = "Papel"
-if(usering === "Papel [MEMBRO]") usering = a+` [MOD+]`
-if(a === "Pedro M [MEMBRO]") a = "Pedro M"
-if(usering === "Pedro M [MEMBRO]") usering = a+` [VIP++]`
-      socket.emit('add user', usering);
-    }
+      
   }
   // Sends a chat message
   function sendMessage () {
@@ -109,6 +90,7 @@ if(usering === "Pedro M [MEMBRO]") usering = a+` [VIP++]`
       $inputMessage.val('');
       addChatMessage({
         username: username,
+    //     username: usering,
         message: "a",
         message: "\n "+message
       });
@@ -382,7 +364,7 @@ return  addChatMessage({
   socket.on('user entrou', function (data) {
     log("[+] "+data.username + ' entrou');
 //   log("Guest"+id + ' saiu');
-    membros.push(data.usering)
+    membros.push(data.username)
     addParticipantsMessage(data);
   });
 
@@ -395,7 +377,7 @@ return  addChatMessage({
       log("[-] "+data.username + ' saiu');
       console.log(data.username + ' saiu');
     }
-    let as = membros.indexOf(data.usering)
+    let as = membros.indexOf(data.username)
     membros.splice(as, 1)
     addParticipantsMessage(data);
     removeChatTyping(data);

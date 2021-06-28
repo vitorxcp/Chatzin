@@ -24,7 +24,7 @@ io.on('connection', function (socket) {
     // we tell the client to execute 'new message'
     socket.broadcast.emit('new message', {
       username: socket.username,
-       usering: socket.usering,
+    //   usering: socket.usering,
       message: data
     });
   });
@@ -44,7 +44,7 @@ io.on('connection', function (socket) {
     // echo globally (all clients) that a person has connected
     socket.broadcast.emit('user entrou', {
       username: socket.username,
-       usering: socket.usering,
+     //  usering: socket.usering,
       numUsers: numUsers
     });
   });
@@ -53,7 +53,7 @@ io.on('connection', function (socket) {
   socket.on('typing', function () {
     socket.broadcast.emit('typing', {
       username: socket.username,
-       usering: socket.usering
+      // usering: socket.usering
     });
   });
 
@@ -61,7 +61,7 @@ io.on('connection', function (socket) {
   socket.on('stop typing', function () {
     socket.broadcast.emit('stop typing', {
       username: socket.username,
-       usering: socket.usering
+     //  usering: socket.usering
     });
   });
 
@@ -73,7 +73,7 @@ io.on('connection', function (socket) {
       // echo globally that this client has left
       socket.broadcast.emit('user saiu', {
         username: socket.username,
-       usering: socket.usering,
+     //  usering: socket.usering,
         numUsers: numUsers
       });
     }
