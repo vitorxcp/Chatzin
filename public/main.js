@@ -180,10 +180,10 @@ return  addChatMessage({
         });
       }
  if(message === "/ping") {
-        
+    
         addChatMessage({
           username: "BOT [✔️][CEO]",
-          message: "WebSocket API Ping: ...ms."
+          message: "WebSocket API Ping: ...ms. | Site API Ping: ...ms."
         });
       }
       // tell server to execute 'new messages' and send along one parameter
