@@ -139,6 +139,8 @@ ul {
 .inputMessage {
   border-radius: 10px;
   border: 1px solid #36393f;
+  background-color: #474a4f;
+  color: #fafafa;
   bottom: 0;
   height: 60px;
   left: 100px;
