@@ -26,6 +26,7 @@ $(function() {
   // Prompt for setting a username
   var username;
   var usering;
+  var username2;
   var connected = false;
   var typing = false;
   var lastTypingTime;
@@ -47,6 +48,7 @@ $(function() {
   // Sets the client's username
   function setUsername () {
     username = cleanInput($usernameInput.val().trim()+id);
+     username2 = cleanInput($usernameInput.val().trim());
 usering = "user"
     if(username === id){
       username = "Guest"+id
@@ -71,7 +73,23 @@ if(a === "Pedro M [MEMBRO]") a = "Pedro M"
 if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
       socket.emit('add user', username);
     }
-      
+       if (username2) {
+      $loginPage.fadeOut();
+      $chatPage.show();
+      $loginPage.off('click');
+      $currentInput = $inputMessage.focus();
+      let a = username2
+       var $aeditado = $('<strong><a>')
+      .text("CEO")
+      .css('color', "red")
+      if(a === "vitor_xp [MEMBRO]") a = "vitor_xp"
+if(username2 === "vitor_xp ghj") username2 = a+` [CEO]`
+ if(a === "Papel [MEMBRO]") a = "Papel"
+if(username2 === "Papel [MEMBRO]") username2 = a+` [MOD+]`
+if(a === "Pedro M [MEMBRO]") a = "Pedro M"
+if(username2 === "Pedro M [MEMBRO]") username2 = a+` [VIP++]`
+      socket.emit('add user', username2);
+    }
   }
   var membros;
 
@@ -288,7 +306,7 @@ return  addChatMessage({
   function getTypingMessages (data) {
     return $('.typing.message').filter(function (i) {
       return $(this).data('username') === data.username;
-       return $(this).data('userinfo') === data.usering;
+       return $(this).data('username') === data.usering;
     });
   }
 //  <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
@@ -306,8 +324,9 @@ return  addChatMessage({
     var index = Math.abs(hash % COLORS.length);
     return COLORS[index];
   }
-function amsfd (date){
-      membros = [""+username+"(Você)", ]
+function amsfd (){
+   setUsername()
+      membros = [""+username2+"(Você)", ]
    }
   // Keyboard events
 
@@ -372,6 +391,7 @@ function amsfd (date){
 
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user entrou', function (data) {
+    amsfd()
     log("[+] "+data.username + ' entrou');
 //   log("Guest"+id + ' saiu');
     membros.push(data.username)
@@ -381,6 +401,7 @@ function amsfd (date){
 
   // Whenever the server emits 'user left', log it in the chat body
   socket.on('user saiu', function (data) {
+    amsfd()
     if(data.username === "Guest"){
       log("Guest"+id + ' saiu');
       console.log("Guest"+id + ' saiu');
