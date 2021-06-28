@@ -71,8 +71,11 @@ if(a === "Pedro M [MEMBRO]") a = "Pedro M"
 if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
       socket.emit('add user', username);
     }
-       var membros = [""+cleanInput($usernameInput.val().trim()+id)+"(Você)", ]
+      
   }
+  var membros;
+
+
   // Sends a chat message
   function sendMessage () {
     var message = $inputMessage.val();
@@ -147,6 +150,7 @@ return  addChatMessage({
        //   removeChatTyping(username)
       }
       if(message === "!members") {
+          amsfd()
         	const ping = new Date();
 	ping.setHours(ping.getHours() - 3);
 	const hora = ping.getHours();
@@ -302,7 +306,9 @@ return  addChatMessage({
     var index = Math.abs(hash % COLORS.length);
     return COLORS[index];
   }
-
+function amsfd (date){
+      membros = [""+username+"(Você)", ]
+   }
   // Keyboard events
 
   $window.keydown(function (event) {
