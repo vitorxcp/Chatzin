@@ -1,10 +1,10 @@
 /* Fix user-agent */
 ::-webkit-scrollbar {
-  width: 0.3em;
+  width: 0.5em;
 }
 ::-webkit-scrollbar-track {
   background: #15171a00;
-  border-radius: 2em;
+  border-radius: 4em;
 }
 ::-webkit-scrollbar-thumb {
   width: 1000000000%;
