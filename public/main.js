@@ -343,17 +343,22 @@ return  addChatMessage({
 
   // Whenever the server emits 'login', log the login message
   socket.on('login', function (data) {
+     membros.push(data.username)
     connected = true;
     // Display the welcome message
     var message = "Bem vindo a o chat";
     log(message, {
       prepend: true
     });
+  //  membros.push(data.username)
     addParticipantsMessage(data);
+    let as = membros.indexOf(data.username)
+    membros.splice(as, 1)
   });
 
   // Whenever the server emits 'new messages', update the chat body
   socket.on('new message', function (data) {
+   //  membros.push(data.username)
     addChatMessage(data);
   });
   
@@ -366,6 +371,7 @@ return  addChatMessage({
 //   log("Guest"+id + ' saiu');
     membros.push(data.username)
     addParticipantsMessage(data);
+    
   });
 
   // Whenever the server emits 'user left', log it in the chat body
@@ -385,11 +391,13 @@ return  addChatMessage({
 
   // Whenever the server emits 'typing', show the typing message
   socket.on('typing', function (data) {
+   //  membros.push(data.username)
     addChatTyping(data);
   });
 
   // Whenever the server emits 'stop typing', kill the typing message
   socket.on('stop typing', function (data) {
+   //  membros.push(data.username)
     removeChatTyping(data);
   });
 });
