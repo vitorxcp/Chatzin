@@ -3,13 +3,13 @@
   width: 0.5em;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(210,calc(var(--saturation-factor, 1)*9.8%),20%);
+  background: hsl(210,calc(var(--saturation-factor, 5)*2.9%),18%);
   border-radius: 4em;
   
 }
 ::-webkit-scrollbar-thumb {
-  width: 1000000000%;
-  font-size: 100000000%;
+  width: 100%;
+  font-size: 100%;
   background: #15171a;
   border-radius: 10em;
 }

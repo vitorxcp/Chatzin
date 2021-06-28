@@ -37,9 +37,9 @@ $(function() {
   function addParticipantsMessage (data) {
     var message = '';
     if (data.numUsers === 1) {
-      message += "Agora tem 1 Participante";
+      message += "1 Participante.";
     } else {
-      message += "Agora tem " + data.numUsers + " participante";
+      message += "" + data.numUsers + " Participantes.";
     }
     countUser = data.numUsers
     log(message);
