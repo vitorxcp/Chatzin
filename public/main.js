@@ -4,7 +4,7 @@ $(function() {
     localStorage.setItem('i'," [MEMBRO]")
   }
   const id = localStorage.i
-  var membros = ["Você"]
+ 
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
   var COLORS = [
@@ -20,7 +20,6 @@ $(function() {
   var $usernameInput = $('.usernameInput'); // Input for username
   var $messages = $('.messages'); // Messages area
   var $inputMessage = $('.inputMessage'); // Input message input box
-
   var $loginPage = $('.login.page'); // The login page
   var $chatPage = $('.chat.page'); // The chatroom page
 
@@ -47,7 +46,7 @@ $(function() {
 
   // Sets the client's username
   function setUsername () {
-    username = cleanInput($usernameInput.val().trim());
+    username = cleanInput($usernameInput.val().trim()+id);
 usering = "user"
     if(username === id){
       username = "Guest"+id
@@ -72,7 +71,7 @@ if(a === "Pedro M [MEMBRO]") a = "Pedro M"
 if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
       socket.emit('add user', username);
     }
-      
+       var membros = [""+cleanInput($usernameInput.val().trim()+id)+"(Você)", ]
   }
   // Sends a chat message
   function sendMessage () {
@@ -343,7 +342,7 @@ return  addChatMessage({
 
   // Whenever the server emits 'login', log the login message
   socket.on('login', function (data) {
-     membros.push(data.username)
+    // membros.push(data.username)
     connected = true;
     // Display the welcome message
     var message = "Bem vindo a o chat";
@@ -352,8 +351,8 @@ return  addChatMessage({
     });
   //  membros.push(data.username)
     addParticipantsMessage(data);
-    let as = membros.indexOf(data.username)
-    membros.splice(as, 1)
+   // let as = membros.indexOf(data.username)
+   // membros.splice(as, 1)
   });
 
   // Whenever the server emits 'new messages', update the chat body
