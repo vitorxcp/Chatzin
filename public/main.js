@@ -26,7 +26,7 @@ $(function() {
 
   // Prompt for setting a username
   var username;
-  var usering
+  var usering;
   var connected = false;
   var typing = false;
   var lastTypingTime;
@@ -53,7 +53,10 @@ usering = cleanInput($usernameInput.val().trim());
       username = "Guest"+id
       console.log(id)
     }
-  
+    if(usering === id){
+      usering = "Guest"+id
+      console.log(id)
+    }
     // If the username is valid
     if (username) {
       $loginPage.fadeOut();
@@ -71,6 +74,23 @@ if(username === "Papel [MEMBRO]") username = a+` [MOD+]`
 if(a === "Pedro M [MEMBRO]") a = "Pedro M"
 if(username === "Pedro M [MEMBRO]") username = a+` [VIP++]`
       socket.emit('add user', username);
+    }
+        if (usering) {
+      $loginPage.fadeOut();
+      $chatPage.show();
+      $loginPage.off('click');
+      $currentInput = $inputMessage.focus();
+      let a = usering
+       var $aeditado = $('<strong><a>')
+      .text("CEO")
+      .css('color', "red")
+      if(a === "vitor_xp [MEMBRO]") a = "vitor_xp"
+if(usering === "vitor_xp [MEMBRO]") usering = a+` [CEO]`
+ if(a === "Papel [MEMBRO]") a = "Papel"
+if(usering === "Papel [MEMBRO]") usering = a+` [MOD+]`
+if(a === "Pedro M [MEMBRO]") a = "Pedro M"
+if(usering === "Pedro M [MEMBRO]") usering = a+` [VIP++]`
+      socket.emit('add user', usering);
     }
   }
   // Sends a chat message
@@ -283,6 +303,7 @@ return  addChatMessage({
   function getTypingMessages (data) {
     return $('.typing.message').filter(function (i) {
       return $(this).data('username') === data.username;
+       return $(this).data('usering') === data.usering;
     });
   }
 //  <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
@@ -356,22 +377,22 @@ return  addChatMessage({
 
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user entrou', function (data) {
-    log("[+] "+data.username + ' entrou');
+    log("[+] "+data.usering + ' entrou');
 //   log("Guest"+id + ' saiu');
-    membros.push(data.username)
+    membros.push(data.usering)
     addParticipantsMessage(data);
   });
 
   // Whenever the server emits 'user left', log it in the chat body
   socket.on('user saiu', function (data) {
-    if(data.username === "Guest"){
+    if(data.usering === "Guest"){
       log("Guest"+id + ' saiu');
       console.log("Guest"+id + ' saiu');
     }else{
-      log("[-] "+data.username + ' saiu');
-      console.log(data.username + ' saiu');
+      log("[-] "+data.usering + ' saiu');
+      console.log(data.usering + ' saiu');
     }
-    let as = membros.indexOf(data.username)
+    let as = membros.indexOf(data.usering)
     membros.splice(as, 1)
     addParticipantsMessage(data);
     removeChatTyping(data);
