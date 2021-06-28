@@ -204,7 +204,7 @@ return  addChatMessage({
       $typingMessages.remove();
     }
 
-    var $Div = $('<hr>').css("background-color", "#434344")
+    var $Div = $('<hr class="upd">')
       	const ping = new Date();
 	ping.setHours(ping.getHours() - 3);
 	const hora = ping.getHours();

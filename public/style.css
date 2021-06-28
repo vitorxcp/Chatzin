@@ -127,10 +127,11 @@ ul {
   padding-bottom: 60px;
 }
 
-hr {
-color: 434344,
-background-color: 434344,
-background: 434344
+.upd {
+    background-color: rgba(0,0,0,.1);
+    background: rgba(0,0,0,.3);
+    color: #fafafafa;
+    box-shadow: 0 0 15px rgb(0 0 0 / 30%);
 }
 
 .messages {
