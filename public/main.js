@@ -303,7 +303,7 @@ return  addChatMessage({
   function getTypingMessages (data) {
     return $('.typing.message').filter(function (i) {
       return $(this).data('username') === data.username;
-       return $(this).data('usering') === data.usering;
+       return $(this).data('userinfo') === data.usering;
     });
   }
 //  <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
@@ -382,7 +382,7 @@ return  addChatMessage({
   socket.on('user entrou', function (data) {
     log("[+] "+data.username + ' entrou');
 //   log("Guest"+id + ' saiu');
-    membros.push(cleanInput($usernameInput.val().trim()))
+    membros.push(data.usering)
     addParticipantsMessage(data);
   });
 
@@ -395,7 +395,7 @@ return  addChatMessage({
       log("[-] "+data.username + ' saiu');
       console.log(data.username + ' saiu');
     }
-    let as = " "+membros.indexOf(cleanInput($usernameInput.val().trim()))
+    let as = membros.indexOf(data.usering)
     membros.splice(as, 1)
     addParticipantsMessage(data);
     removeChatTyping(data);
