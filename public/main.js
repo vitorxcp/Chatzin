@@ -30,7 +30,7 @@ $(function() {
   var connected = false;
   var typing = false;
   var lastTypingTime;
-  var $currentInput = $usernameInput;
+  var $currentInput = $usernameInput.focus();
 
   var socket = io();
 
@@ -357,7 +357,7 @@ function amsfd (){
 
   // Focus input when clicking anywhere on login page
   $loginPage.click(function () {
-    $currentInput;
+    $currentInput.focus();
   });
 
   // Focus input when clicking on the message input's border
