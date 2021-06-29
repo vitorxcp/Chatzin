@@ -57,7 +57,9 @@ usering = "user"
 
     // If the username is valid
     if (username) {
-    
+      $loginPage.fadeOut();
+      $chatPage.show();
+      $loginPage.off('click');
       $currentInput = $inputMessage;
       let a = username
        var $aeditado = $('<strong><a>')
@@ -355,7 +357,7 @@ function amsfd (){
 
   // Focus input when clicking anywhere on login page
   $loginPage.click(function () {
-    $currentInput.focus();
+    $currentInput;
   });
 
   // Focus input when clicking on the message input's border
