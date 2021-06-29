@@ -30,7 +30,7 @@ $(function() {
   var connected = false;
   var typing = false;
   var lastTypingTime;
-  var $currentInput = $usernameInput.focus();
+  var $currentInput = $usernameInput;
 
   var socket = io();
 
@@ -57,10 +57,8 @@ usering = "user"
 
     // If the username is valid
     if (username) {
-      $loginPage.fadeOut();
-      $chatPage.show();
-      $loginPage.off('click');
-      $currentInput = $inputMessage.focus();
+    
+      $currentInput = $inputMessage;
       let a = username
        var $aeditado = $('<strong><a>')
       .text("CEO")
