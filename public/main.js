@@ -215,20 +215,21 @@ return  addChatMessage({
     if(data.username === "Chatzin [BOT]") coloruser = "#00ADFF"
      if(data.username === "Papel [MOD+]") coloruser = "#00A6D8"
       //getUsernameColor(data.username)
+    if(minutos.length === 1) minutos = "0"+minutos
         let hrs = ""+hora+":"+minutos+""
-    var $usernameDiv = $('<a style="color: '+coloruser+';">'+data.username+"</a> Hoje ás "+hrs)
-      .text('<a style="color: '+coloruser+';">'+data.username+"</a> Hoje ás "+hrs)
-      //.css('color', coloruser)
+    var usernameDiv = ('<a style="color: '+coloruser+';">'+data.username+'</a> <a style="color: #cfcfcf">Hoje ás '+hrs+' - '+minutos.length+'</a>')//$('<span class="username"/>'+data.username+" Hoje ás "+hrs+"")
+    //  .text(data.username+" Hoje ás "+hrs)
+     // .css('color', coloruser)
       var $divsoria = $('<br><a>')
       .addClass("messagem")
       
-    var $messageBodyDiv = $('<span class="messageBody">')
+    var messageBodyDiv = $('<span class="messageBody">')
       .text(data.message).css("color", "#fafafa");
     var typingClass = data.typing ? 'typing' : '';
     var $messageDiv = $('<li class="message messagem"/>')
       .data('username', data.username)
       .addClass(typingClass)
-      .append($usernameDiv, $divsoria, $messageBodyDiv);
+      .append(usernameDiv, $divsoria, messageBodyDiv);
 var $errorss = $("<br>")
   .append($Div);
       addMessageElement($errorss, options)
