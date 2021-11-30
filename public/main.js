@@ -188,7 +188,7 @@ return  addChatMessage({
 
   // Log a message
   function log (message, options) {
-    var $el = $('<center><div id="jumplogs"><li>').addClass('log').text(message);
+    var $el = $('<div id="jumplogs"><li>').addClass('log').text(message);
      var $el2 = $('<br>').text(" ");
     addMessageElement($el , options);
   }
@@ -394,7 +394,7 @@ function amsfd (){
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user entrou', function (data) {
     amsfd()
-    log("[+] "+data.username + ' entrou');
+    log("[+] "+data.username + ' entrou no Servidor, de boas vindas a ele ;3');
 //   log("Guest"+id + ' saiu');
     membros.push(data.username)
     addParticipantsMessage(data);
@@ -405,11 +405,11 @@ function amsfd (){
   socket.on('user saiu', function (data) {
     amsfd()
     if(data.username === "Guest"){
-      log("Guest"+id + ' saiu');
-      console.log("Guest"+id + ' saiu');
+      log("Guest"+id + ' saiu do Servidor!');
+      console.log("Guest"+id + ' saiu do Servidor!');
     }else{
-      log("[-] "+data.username + ' saiu');
-      console.log(data.username + ' saiu');
+      log("[-] "+data.username + ' saiu do Servidor!');
+      console.log(data.username + ' saiu do Servidor!');
     }
     let as = membros.indexOf(data.username)
     membros.splice(as, 1)
