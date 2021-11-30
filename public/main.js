@@ -230,9 +230,12 @@ return  addChatMessage({
     var $messageDiv = $('<li class="message messagem"/>')
       .data('username', data.username)
       .addClass(typingClass)
-      .append($Div, $usernameDiv, $divsoria, $messageBodyDiv);
-
-    addMessageElement($messageDiv, options);
+      .append($usernameDiv, $divsoria, $messageBodyDiv);
+var $errorss = $("<br>")
+  .append($Div);
+      addMessageElement($errorss, options)
+    addMessageElement($messageDiv, options)
+      addMessageElement($errorss, options)
   }
 
   // Adds the visual chat typing message
