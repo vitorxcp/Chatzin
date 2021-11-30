@@ -188,7 +188,7 @@ return  addChatMessage({
 
   // Log a message
   function log (message, options) {
-    var $el = $('<li style="color: 36393f">').addClass('log').text(message);
+    var $el = $('<center><div id="jumplogs"><li>').addClass('log').text(message);
      var $el2 = $('<br>').text(" ");
     addMessageElement($el , options);
   }

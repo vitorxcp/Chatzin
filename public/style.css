@@ -24,6 +24,20 @@
     overflow: hidden;
     box-shadow: 0 0 15px rgb(0 0 0 / 500%);
 }
+#jumplogs {
+    min-height: 0.5vh;
+    animation: background-scroll 60s linear infinite;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgb(0 0 0);
+    /* border: blue; */
+    background: #00000040;
+    width: 800px;
+    height: 30px;
+    align-content: center;
+    text-align: center;
+    padding: 0;
+}
 html {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -120,7 +134,7 @@ ul {
 }
 
 .log {
-  color: #fafafa;
+  color: #239197;
   font-size: 100%;
   margin: 10px;
   text-align: center;
