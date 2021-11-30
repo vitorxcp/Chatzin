@@ -17,6 +17,9 @@
 * {
   box-sizing: border-box;
 }
+.messagem:hover {
+    background-color: rgb(74 73 73 / 50)
+}
 #jump {
       min-height: 0.50vh;
     animation: background-scroll 60s linear infinite;

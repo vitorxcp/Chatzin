@@ -204,7 +204,7 @@ return  addChatMessage({
       $typingMessages.remove();
     }
 
-    var $Div = $('</br><div id="jump"></div></br>')
+    var $Div = $('<br>')
       	const ping = new Date();
 	ping.setHours(ping.getHours() - 3);
 	const hora = ping.getHours();
@@ -216,17 +216,18 @@ return  addChatMessage({
      if(data.username === "Papel [MOD+]") coloruser = "#00A6D8"
       //getUsernameColor(data.username)
         let hrs = ""+hora+":"+minutos+""
-    var $usernameDiv = $('<span class="username"/>')
+    var $usernameDiv = $('<span class="username messagem"/>')
       .text(data.username+" - "+hrs)
       .css('color', coloruser)
       var $divsoria = $('<br><a>')
       .text("-")
       .css('color', "#36393f")
+      .addClass("messagem")
       
     var $messageBodyDiv = $('<span class="messageBody">')
       .text(data.message).css("color", "#fafafa");
     var typingClass = data.typing ? 'typing' : '';
-    var $messageDiv = $('<li class="message"/>')
+    var $messageDiv = $('<li class="message messagem"/>')
       .data('username', data.username)
       .addClass(typingClass)
       .append($Div, $usernameDiv, $divsoria, $messageBodyDiv);
