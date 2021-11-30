@@ -18,7 +18,12 @@
   box-sizing: border-box;
 }
 .messagem:hover {
-    background-color: rgb(74 73 73 / 50)
+    background-color: rgb(20 16 16 / 49%);
+    width: 1000px;
+        margin-bottom: 5px;
+    border-radius: 5px;
+    margin-left: 5px;
+        transition: 1000ms;
 }
 #jump {
       min-height: 0.50vh;

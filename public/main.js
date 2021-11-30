@@ -216,12 +216,10 @@ return  addChatMessage({
      if(data.username === "Papel [MOD+]") coloruser = "#00A6D8"
       //getUsernameColor(data.username)
         let hrs = ""+hora+":"+minutos+""
-    var $usernameDiv = $('<span class="username messagem"/>')
-      .text(data.username+" - "+hrs)
-      .css('color', coloruser)
+    var $usernameDiv = $('<a style="color: '+coloruser+';">'+data.username+"</a> Hoje ás "+hrs)
+      .text('<a style="color: '+coloruser+';">'+data.username+"</a> Hoje ás "+hrs)
+      //.css('color', coloruser)
       var $divsoria = $('<br><a>')
-      .text("-")
-      .css('color', "#36393f")
       .addClass("messagem")
       
     var $messageBodyDiv = $('<span class="messageBody">')
