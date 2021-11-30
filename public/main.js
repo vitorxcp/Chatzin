@@ -188,9 +188,9 @@ return  addChatMessage({
 
   // Log a message
   function log (message, options) {
-    var $el = $('<li><br>').addClass('log').text(message);
+    var $el = $('<li style="color: 36393f">').addClass('log').text(message);
      var $el2 = $('<br>').text(" ");
-    addMessageElement($el ,$el2 , options);
+    addMessageElement($el , options);
   }
   
 
@@ -374,7 +374,7 @@ function amsfd (){
     // Display the welcome message
     var message = "Você Acaba de Entrar No Chat, Atualmente Temos "+data.numUsers+" Usuarios Aqui!";
     log(message, {
-      prepend: true
+      prepend: false
     });
   //  membros.push(data.username)
     addParticipantsMessage(data);
