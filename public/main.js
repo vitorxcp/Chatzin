@@ -372,19 +372,19 @@ function amsfd (){
     // membros.push(data.username)
     connected = true;
     // Display the welcome message
-    var message = "Você Acaba de Entrar No Chat, Atualmente Temos "+data.numUsers+" Usuarios Aqui!";
+    var message = `Você acabou de entrar no Servidor! Estão Online ${data.numUsers} Usuarios.`;
     log(message, {
-      prepend: false
+      prepend: true
     });
   //  membros.push(data.username)
     addParticipantsMessage(data);
-   // let as = membros.indexOf(data.username)
-   // membros.splice(as, 1)
+    let as = membros.indexOf(data.username)
+    membros.splice(as, 1)
   });
 
   // Whenever the server emits 'new messages', update the chat body
   socket.on('new message', function (data) {
-   //  membros.push(data.username)
+     membros.push(data.username)
     addChatMessage(data);
   });
   
