@@ -215,9 +215,11 @@ return  addChatMessage({
     if(data.username === "Chatzin [BOT]") coloruser = "#00ADFF"
      if(data.username === "Papel [MOD+]") coloruser = "#00A6D8"
       //getUsernameColor(data.username)
-    if(minutos.length === 1) minutos = "0"+minutos
-        let hrs = ""+hora+":"+minutos+""
-    var usernameDiv = ('<a style="color: '+coloruser+';">'+data.username+'</a> <a style="color: #cfcfcf">Hoje ás '+hrs+' - '+minutos.length+'</a>')//$('<span class="username"/>'+data.username+" Hoje ás "+hrs+"")
+    let miscrit = ""+minutos+""
+    if(miscrit.length === 1) var minutoss = "0"+minutos
+    if(minutoss) var hrs = ""+hora+":"+minutos+""
+        if(!minutoss) var hrs = ""+hora+":"+minutos+""
+    var usernameDiv = ('<a style="color: '+coloruser+';">'+data.username+'</a> <a style="color: #cfcfcf">Hoje ás '+hrs+' - '+miscrit.length+'</a>')//$('<span class="username"/>'+data.username+" Hoje ás "+hrs+"")
     //  .text(data.username+" Hoje ás "+hrs)
      // .css('color', coloruser)
       var $divsoria = $('<br><a>')
