@@ -410,7 +410,7 @@ function amsfd (){
      let coloruser = "#929191" 
     if(data.username === "vitor_xp [CEO]") coloruser = "red"
     if(data.username === "Chatzin [BOT]") coloruser = "#00ADFF"
-    log('[<a style="color: #00ff00">+</a>] <a style="color: '+coloruser+'">'+data.username + '</a> entrou no Servidor, de boas vindas a ele 🤩');
+    log('[<a style="color: #00ff00">+</a>] <strong><a style="color: '+coloruser+'">'+data.username + '</a></strong> entrou no Servidor, de boas vindas a ele 🤩');
 //   log("Guest"+id + ' saiu');
     membros.push(data.username)
     addParticipantsMessage(data);
@@ -423,7 +423,10 @@ function amsfd (){
     if(data.username === "Guest"){
       log("Guest"+id + ' saiu do Servidor!');
     }else{
-      log("[-] "+data.username + ' saiu do Servidor, que pena 😥');
+          let coloruser = "#929191" 
+    if(data.username === "vitor_xp [CEO]") coloruser = "red"
+    if(data.username === "Chatzin [BOT]") coloruser = "#00ADFF"
+      log('[<a style="color: red">-</a>] <strong><a style="color: '+coloruser+'">'+data.username + '</a></strong> saiu do Servidor, que pena 😥');
     }
     let as = membros.indexOf(data.username)
     membros.splice(as, 1)
