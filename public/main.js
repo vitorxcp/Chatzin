@@ -187,9 +187,9 @@ return  addChatMessage({
 
   // Log a message
   function log (message, options) {
-    var $el = $('<div id="jumplogs"><li>').addClass('log').text(message);
+    var el = ('<div id="jumplogs" class="log">'+message+'<li>');
      var $el2 = $('<br>').text(" ");
-    addMessageElement($el , options);
+    addMessageElement(el , options);
   }
   
 
@@ -407,7 +407,10 @@ function amsfd (){
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user entrou', function (data) {
     amsfd()
-    log("[+] "+data.username + ' entrou no Servidor, de boas vindas a ele 🤩');
+     let coloruser = "#929191" 
+    if(data.username === "vitor_xp [CEO]") coloruser = "red"
+    if(data.username === "Chatzin [BOT]") coloruser = "#00ADFF"
+    log('[<a style="color: #00ff00">+</a>] <a style="color: '+coloruser+'">'+data.username + '</a> entrou no Servidor, de boas vindas a ele 🤩');
 //   log("Guest"+id + ' saiu');
     membros.push(data.username)
     addParticipantsMessage(data);
