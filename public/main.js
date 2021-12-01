@@ -205,7 +205,7 @@ return  addChatMessage({
 
     var $Div = $('<br>')
       	const ping = new Date();
-	ping.setHours(ping.getHours() - 3);
+	ping.setHours(ping.getHours());
 	const hora = ping.getHours();
 	const minutos = ping.getMinutes();
     let coloruser = "#929191" 
@@ -376,7 +376,15 @@ function amsfd (){
     // membros.push(data.username)
     connected = true;
     // Display the welcome message
-    var message = `Você acabou de entrar no Servidor! 
+        	const ping = new Date();
+	ping.setHours(ping.getHours());
+	const hora = ""+ping.getHours()+""
+	const minutos = ping.getMinutes();
+    if(hora === "00" || hora === "0" || hora === "1" || hora === "2" || hora === "3" || hora === "4") var horariodia = "Boa Madrugada"
+      if(hora === "5" || hora === "6" || hora === "7" || hora === "8" || hora === "9" || hora === "10" || hora === "11") var horariodia = "Bom Dia"
+        if(hora === "12" || hora === "13" || hora === "14" || hora === "15" || hora === "16" || hora === "17" || hora === "18") var horariodia = "Boa Tarde"
+          if(hora === "19" || hora === "20" || hora === "21" || hora === "22" || hora === "23") var horariodia = "Boa Noite"
+    var message = horariodia+`! \nVocê acabou de entrar no Servidor! 
     Estão Online ${data.numUsers} Usuarios.`;
     log(message, {
       prepend: true
