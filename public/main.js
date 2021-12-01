@@ -51,8 +51,7 @@ $(function() {
      username2 = cleanInput($usernameInput.val().trim());
 usering = "user"
     if(username === id){
-      username = "Guest"+id
-      console.log(id)
+      username = "Visitante"+id
     }
 
     // If the username is valid
@@ -217,9 +216,9 @@ return  addChatMessage({
       //getUsernameColor(data.username)
     let miscrit = ""+minutos+""
     if(miscrit.length === 1) var minutoss = "0"+minutos
-    if(minutoss) var hrs = ""+hora+":"+minutos+""
+    if(minutoss) var hrs = ""+hora+":"+minutoss+""
         if(!minutoss) var hrs = ""+hora+":"+minutos+""
-    var usernameDiv = ('<a style="color: '+coloruser+';">'+data.username+'</a> <a style="color: #cfcfcf">Hoje ás '+hrs+' - '+miscrit.length+'</a>')//$('<span class="username"/>'+data.username+" Hoje ás "+hrs+"")
+    var usernameDiv = ('<a style="color: '+coloruser+';" class="username">'+data.username+'</a> <a style="color: #cfcfcf">Hoje ás '+hrs+'</a>')//$('<span class="username"/>'+data.username+" Hoje ás "+hrs+"")
     //  .text(data.username+" Hoje ás "+hrs)
      // .css('color', coloruser)
       var $divsoria = $('<br><a>')
@@ -377,7 +376,8 @@ function amsfd (){
     // membros.push(data.username)
     connected = true;
     // Display the welcome message
-    var message = `Você acabou de entrar no Servidor! Estão Online ${data.numUsers} Usuarios.`;
+    var message = `Você acabou de entrar no Servidor! 
+    Estão Online ${data.numUsers} Usuarios.`;
     log(message, {
       prepend: true
     });
@@ -399,7 +399,7 @@ function amsfd (){
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user entrou', function (data) {
     amsfd()
-    log("[+] "+data.username + ' entrou no Servidor, de boas vindas a ele ;3');
+    log("[+] "+data.username + ' entrou no Servidor, de boas vindas a ele 🤩');
 //   log("Guest"+id + ' saiu');
     membros.push(data.username)
     addParticipantsMessage(data);
@@ -411,10 +411,8 @@ function amsfd (){
     amsfd()
     if(data.username === "Guest"){
       log("Guest"+id + ' saiu do Servidor!');
-      console.log("Guest"+id + ' saiu do Servidor!');
     }else{
-      log("[-] "+data.username + ' saiu do Servidor!');
-      console.log(data.username + ' saiu do Servidor!');
+      log("[-] "+data.username + ' saiu do Servidor, que pena 😥');
     }
     let as = membros.indexOf(data.username)
     membros.splice(as, 1)
