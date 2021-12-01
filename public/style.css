@@ -135,51 +135,14 @@ ul {
 .messages {
   font-size: 120%;
 }
-button{
-#jumbotron .right-side-text .buttons {
-      background-color: transparent;
-    color: #006bf4;
-    text-decoration: none;
+.button{
+      /* color: #006bf4; */
+      text-decoration: none;
       padding: 0.5em 1em;
-    box-sizing: border-box;
-    border-radius: 6px;
-    margin-left: 5px;
-    margin-right: 5px;
-    transition: .75s;
-    text-decoration: none;
-    text-align: center;
-    margin-top: 2em;
-    display: inline-block;
-    width: 100%;
-    -webkit-animation-name: fade-in-right;
-    animation-name: fade-in-right;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 20s;
-    animation-duration: 8s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-name: fade-in-right;
-    animation-name: fade-in-right;
-    display: block;
-    font-family: Pacifico,cursive;
-    color: #fff;
-    text-shadow: 0 0 25px #0000004d;
-    line-height: 1.25;
-    font-family: Pacifico,cursive;
-    color: #fff;
-    text-shadow: 0 0 25px #000000;
-    line-height: 1.25;
-    position: absolute;
-    right: 3.5vw;
-    transform: translateY(-50%);
-    top: 50%;
-    text-align: right;
-    position: absolute;
-    right: 3.5vw;
-    transform: translateY(-50%);
-    top: 50%;
-    text-align: right;
+      animation-name: fade-in-right;
+      display: block;
+      font-family: Pacifico,cursive;
+      text-shadow: 0 0 25px #0000004d;
 }
 .inputMessage {
   font-size: 120%;
